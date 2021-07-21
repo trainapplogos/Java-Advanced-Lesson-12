@@ -1,0 +1,32 @@
+plugins {
+    id 'java-library'
+    id 'war'
+}
+
+repositories {
+    mavenCentral()
+   // jcenter()
+}
+
+
+war {
+ 	rootSpec.include("**/*.class")
+    rootSpec.include("**/*.jar")
+
+
+    baseName = 'JA-Lesson-12-Gradle-Homework'
+  //  version =  '0.1-SNAPSHOT'
+    manifest {
+        attributes 'Main-Class': 'org.package.Application'
+    } 
+}
+
+
+dependencies {
+    testImplementation 'junit:junit:4.13'
+
+   // api 'org.apache.commons:commons-math3:3.6.1'
+    //implementation 'com.google.guava:guava:29.0-jre'
+    runtime 'javax.servlet:javax.servlet-api:4.0.1'
+    runtime 'javax.servlet:jstl:1.1.2'
+}
